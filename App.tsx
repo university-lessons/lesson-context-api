@@ -2,13 +2,13 @@ import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View } from "react-native";
 import Home from "./src/pages/Home";
 
-import AppContext from "./src/contexts/AppContext";
+import { AppContext, AppContextProps } from "./src/contexts/AppContext";
 import { useState } from "react";
 
 export default function App() {
   const [track, setTrack] = useState(1);
 
-  const app = {
+  const appContext: AppContextProps = {
     track,
     prev: () => {
       if (track > 1) setTrack(track - 1);
@@ -20,7 +20,7 @@ export default function App() {
   };
 
   return (
-    <AppContext.Provider value={app}>
+    <AppContext.Provider value={appContext}>
       <View style={styles.container}>
         <Home />
       </View>

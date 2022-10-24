@@ -2,7 +2,7 @@ import { View, StyleSheet, Button } from "react-native";
 import React, { useContext } from "react";
 
 import ControlFooter from "./ControlFooter";
-import AppContext from "../contexts/AppContext";
+import { AppContext } from "../contexts/AppContext";
 
 export default function Control() {
   const app = useContext(AppContext);
