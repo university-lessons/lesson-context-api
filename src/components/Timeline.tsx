@@ -4,10 +4,10 @@ import { useContext } from "react";
 import { AppContext, useAppContext } from "../contexts/AppContext";
 
 export default function Timeline() {
-  // example using useContext
+  // example using useContext (this is bad because you need to know the context and there's no check for the provider wrapper)
   // const app = useContext(AppContext);
 
-  // example using our custom consumer hook:
+  // example using our custom consumer hook (it's simpler):
   const app = useAppContext();
 
   return (

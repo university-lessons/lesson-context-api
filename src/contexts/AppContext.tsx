@@ -8,13 +8,8 @@ export interface AppContextProps {
   musicTime: number;
 }
 
-// Create a new context using default values (they'll be replaced in a moment..)
-export const AppContext = createContext<AppContextProps>({
-  track: 0,
-  prev: () => {},
-  next: () => {},
-  musicTime: 0,
-});
+// Create a new empty (undefined) context (you don't need to export it if using only the custom hook)
+export const AppContext = createContext<AppContextProps | undefined>(undefined);
 
 // Create a custom context provider, so all context data will be self-contained
 export default function AppContextProvider({ children }: PropsWithChildren) {
@@ -36,8 +31,7 @@ export default function AppContextProvider({ children }: PropsWithChildren) {
   );
 }
 
-//---------------------------------------- Extra example
-// Creating a custom consumer hook (check Timeline.tsx for usage):
+// Create a custom consumer hook (check Timeline.tsx for usage)
 export function useAppContext() {
   const context = useContext<AppContextProps>(AppContext);
 

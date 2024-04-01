@@ -1,10 +1,8 @@
-import { View, Text, StyleSheet } from "react-native";
-import React from "react";
-import { useContext } from "react";
-import { AppContext } from "../contexts/AppContext";
+import { StyleSheet, Text } from "react-native";
+import { useAppContext } from "../contexts/AppContext";
 
 export default function ControlFooter() {
-  const app = useContext(AppContext);
+  const app = useAppContext();
 
   return (
     <Text style={styles.text}>

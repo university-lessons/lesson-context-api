@@ -1,11 +1,10 @@
-import { View, StyleSheet, Button } from "react-native";
-import React, { useContext } from "react";
+import { Button, StyleSheet, View } from "react-native";
 
+import { useAppContext } from "../contexts/AppContext";
 import ControlFooter from "./ControlFooter";
-import { AppContext } from "../contexts/AppContext";
 
 export default function Control() {
-  const app = useContext(AppContext);
+  const app = useAppContext();
 
   const handlePrev = () => {
     app.prev();
