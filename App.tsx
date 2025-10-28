@@ -1,15 +1,16 @@
 import { StyleSheet, View } from "react-native";
 import Home from "./src/pages/Home";
+import FirebaseContextProvider from "./src/contexts/AppContext";
 
-import AppContextProvider from "./src/contexts/AppContext";
+// Se usar expo router, o provider vai no _layout mais externo!
 
 export default function App() {
   return (
-    <AppContextProvider>
+    <FirebaseContextProvider>
       <View style={styles.container}>
         <Home />
       </View>
-    </AppContextProvider>
+    </FirebaseContextProvider>
   );
 }
 
